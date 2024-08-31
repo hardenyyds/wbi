@@ -2,6 +2,11 @@
 # @author <a href="https://github.com/liyupi">程序员鱼皮</a>
 # @from <a href="https://yupi.icu">编程导航知识星球</a>
 spring:
+  rabbitmq:
+    host: 192.168.200.10
+    port: 5672
+    password: 123456
+    username: root
   application:
     name: springboot-init
   # 默认 dev 环境
@@ -21,17 +26,17 @@ spring:
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/my_db
+    url: jdbc:mysql://192.168.200.10:3306/wbi
     username: root
-    password: 123456
+    password: root@123
   # Redis 配置
   # todo 需替换配置，然后取消注释
-#  redis:
-#    database: 1
-#    host: localhost
-#    port: 6379
-#    timeout: 5000
-#    password: 123456
+  redis:
+    database: 1
+    host: 192.168.200.10
+    port: 6379
+    timeout: 5000
+#    password:
   # Elasticsearch 配置
   # todo 需替换配置，然后取消注释
 #  elasticsearch:
@@ -90,6 +95,9 @@ cos:
     secretKey: xxx
     region: xxx
     bucket: xxx
+
+# 鱼聪明api
+
 # 接口文档配置
 knife4j:
   enable: true
@@ -101,3 +109,7 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.yupi.springbootinit.controller
+yuapi:
+  client:
+    access-key: g4a5n8mip8meubqqglrzoeazze9ug6xb
+    secret-key: kgicq8pnllbrv7cdjgaap3g6v8hqegr0
